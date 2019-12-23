@@ -1,0 +1,43 @@
+public class Test
+{
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		String str = new String();
+		int l = 0;
+		int v = 0;
+		int c = 0;
+		System.out.println("Enter the String");
+		str = sc.nextLine();
+		l = str.length();
+		char arr1[l];
+		for(int j=0; j<l; j++)
+		{
+			arr1[j] = str.charAt(j);
+		}
+		char arr2[l];
+		for(int j=0; j<l; j++)
+		{
+			arr2[j] = arr1[l-1-j];
+		}
+		for(int j=0; j<l; j++)
+		{
+			System.out.println(arr2[j]);
+		}
+		for (int j=0; j<l; j++)
+		{
+			if(arr1[j] == 'a' || 'A' || 'e' || 'E' || 'i' || 'I' || 'o' || 'O' || 'u' || 'U')
+			{
+				int v++;
+			}
+			else if (arr1[j] = ' ')
+			{
+			}
+			else
+			{
+				int c++;
+			}
+		}
+		System.out.println("The given string contains" + v + "vowels and" + c + "consonants");
+	}
+}
