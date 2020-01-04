@@ -1,0 +1,187 @@
+--------------------------------------------Car.java---------------------------------------------------
+class Car{
+	
+	
+	//members
+	String carName;
+	String carManu;
+	int yearManu;
+	
+	
+	//args constructor
+	
+	public Car(String carName, String carManu, int yearManu) {
+		super();
+		this.carName = carName;
+		this.carManu = carManu;
+		this.yearManu = yearManu;
+	}
+
+	
+	//def cons
+	
+	public Car() {
+		super();
+	}
+
+
+	//setters and getters
+
+	public String getCarName() {
+		return carName;
+	}
+
+	public void setCarName(String carName) {
+		this.carName = carName;
+	}
+
+	public String getCarManu() {
+		return carManu;
+	}
+
+	public void setCarManu(String carManu) {
+		this.carManu = carManu;
+	}
+
+	public int getYearManu() {
+		return yearManu;
+	}
+
+	public void setYearManu(int yearManu) {
+		this.yearManu = yearManu;
+	}
+	
+}
+
+
+
+
+
+---------------------------------Showroom.java---------------------------------------------------------------------------
+
+import java.util.ArrayList;
+
+public class Showroom {
+	
+	
+	//members
+	
+	String showName;
+	String location;
+	ArrayList<Car> carList = new ArrayList<Car>();
+	
+	
+	//args cons
+	
+	public Showroom(String showName, String location, ArrayList<Car> carList) {
+		super();
+		this.showName = showName;
+		this.location = location;
+		this.carList = carList;
+	}
+
+
+	//def cons
+	
+	public Showroom() {
+		super();
+	}
+
+	
+	
+	
+	//setters and getters
+	
+	public String getShowName() {
+		return showName;
+	}
+
+
+	public void setShowName(String showName) {
+		this.showName = showName;
+	}
+
+
+	public String getLocation() {
+		return location;
+	}
+
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+
+	public ArrayList<Car> getCarList() {
+		return carList;
+	}
+
+
+	public void setCarList(ArrayList<Car> carList) {
+		this.carList = carList;
+	}
+	
+}
+
+
+
+
+-------------------------------------WeekendAssessment2CaShow.java-------------------------------------------------------------------
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.swing.event.CaretListener;
+
+public class WeekendAssessment2CaSho {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Car c1 = new Car("Jazz", "Honda", 2017);
+		Car c2 = new Car("Civic", "Honda", 2018);
+		Car c3 = new Car("Swift", "Suzuki", 2017);
+		Car c4 = new Car("City", "Honda", 2017);
+		Car c5 = new Car("Duster", "Renault", 2017);
+		Car c6 = new Car("Kwid", "Renault", 2017);
+		Car c7 = new Car("Micra", "Nissan", 2017);
+		Car c8 = new Car("Alto", "Maruti", 2017);
+		
+		ArrayList<Car> carList1 = new ArrayList<Car>();
+		carList1.add(c1);
+		carList1.add(c2);
+		carList1.add(c3);
+		
+		ArrayList<Car> carList2 = new ArrayList<Car>();
+		carList2.add(c4);
+		carList2.add(c5);
+		carList2.add(c6);
+		
+		
+		ArrayList<Car> carList3 = new ArrayList<Car>();
+		carList3.add(c7);
+		carList3.add(c8);
+
+		Showroom s1 = new Showroom("Sabus Cars", "Mehdipatnam", carList1);
+		Showroom s2 = new Showroom("Dwaraka Motors", "Attapur", carList2);
+		Showroom s3 = new Showroom("Lakshmi Automotive Dealers", "Jubilee Hills", carList3);
+		
+		HashMap<String, ArrayList<Car>> m = new HashMap<String, ArrayList<Car>>();
+		m.put("Sabus Car", carList1);
+		m.put("Dwaraka Motors", carList2);
+		m.put("Lakshmi Automotive Dealers", carList3);
+		
+		//-----------------------------------------------------------------------
+		
+		
+		System.out.println(s1.getShowName() + "\n" + s1.getLocation() + "\n");
+		
+		
+		
+		ArrayList<Car> cl1 = m.get("Sabus Car");
+		for(Car c : cl1) {
+			System.out.println(c.carName);
+		}
+	}
+
+}
