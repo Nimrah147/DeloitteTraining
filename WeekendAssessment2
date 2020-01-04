@@ -1,0 +1,40 @@
+
+public class WeekendAssessment2 {
+
+	public static void main(String[] args) {
+		String str = "This is the world of java";
+		String[] arrSplit = str.trim().split("\\s+");
+	    for (int i=0; i < arrSplit.length; i++)
+	    {
+	      System.out.println(arrSplit[i]);
+	    }
+	    
+	    String[] revArrSplit = new String[arrSplit.length];
+	    for(int i=0; i<arrSplit.length; i++) {
+	    	revArrSplit[i]= arrSplit[arrSplit.length -i -1];
+	    }
+	    
+	    System.out.println("\n");
+	    
+	    String[] finalStr = new String[arrSplit.length];
+	    
+	    char[] charr;
+    	char[] revCharr;
+    	
+	    for (String s: revArrSplit) {
+	    	charr = s.toCharArray();
+	    	revCharr = new char[s.length()];
+	    	for(int i=0; i<charr.length; i++) {
+	    		revCharr[i] = charr[charr.length -i -1];
+	    	}
+	    	System.out.println(revCharr);
+	    	for(int i=0; i<arrSplit.length; i++) {
+	    	finalStr[i] = revCharr.toString();
+	    	}
+	    }
+	    
+	    for(int i=0; i<finalStr.length; i++) {
+	    System.out.print(finalStr[i] + " ");
+	    }
+	}
+}
